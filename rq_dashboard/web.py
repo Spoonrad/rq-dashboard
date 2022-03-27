@@ -171,6 +171,7 @@ def serialize_job(job):
         ended_at=serialize_date(job.ended_at),
         exc_info=str(job.exc_info) if job.exc_info else None,
         description=job.description,
+        kwargs=job.kwargs
     )
 
 
