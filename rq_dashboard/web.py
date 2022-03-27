@@ -17,6 +17,7 @@ provides the option to require HTTP Basic Auth in a few lines of code.
 
 """
 import os
+import json
 import re
 from functools import wraps
 from math import ceil
@@ -171,6 +172,7 @@ def serialize_job(job):
         ended_at=serialize_date(job.ended_at),
         exc_info=str(job.exc_info) if job.exc_info else None,
         description=job.description,
+        kwargs=json.dumps(job.kwargs, indent=2)
     )
 
 
